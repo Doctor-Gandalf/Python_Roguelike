@@ -1,0 +1,25 @@
+    @staticmethod
+    def nameplate():
+        nameplate_dungeon = Dungeon(80, 12, Tile(' '))
+        nameplate_dungeon.make_rectangle(0, 79, 0, 11, Tile("."))
+
+        # Make 'K'.
+        nameplate_dungeon.make_line([2 for _ in range(10)], range(2, 10))
+        nameplate_dungeon.make_line(range(4, 11, 2), range(6, 10))
+        nameplate_dungeon.make_line(range(3, 13, 2), range(6, 1, -1))
+
+        # Make 'E'.
+        nameplate_dungeon.make_line([14 for _ in range(10)], range(2, 10))
+        nameplate_dungeon.make_line(range(15, 22), [2 for _ in range(8)])
+        nameplate_dungeon.make_line(range(15, 22), [6 for _ in range(8)])
+        nameplate_dungeon.make_line(range(15, 22), [9 for _ in range(8)])
+
+        # Make first 'L'.
+        nameplate_dungeon.make_line([24 for _ in range(10)], range(2, 10))
+        nameplate_dungeon.make_line(range(25, 31), [2 for _ in range(8)])
+
+        # Make second 'L'.
+        nameplate_dungeon.make_line([32 for _ in range(10)], range(2, 10))
+        nameplate_dungeon.make_line(range(33, 39), [2 for _ in range(8)])
+
+        return nameplate_dungeon

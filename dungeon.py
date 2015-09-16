@@ -1,10 +1,18 @@
 __author__ = 'Kellan Childers'
 from graph import Graph
-from tiles.tile import Tile
+from tiles import *
 
 
 class Dungeon(Graph):
-    def __init__(self, x=10, y=10, default=Tile(' ')):
+    def __init__(self, x=10, y=10, default=Ground()):
+        """
+
+        :param x:
+        :param y:
+        :param default:
+        :type default: Tile
+        :return:
+        """
         super(Dungeon, self).__init__(x, y, default)
 
     def make_rectangle(self, x_start, x_end, y_start, y_end, line_element=Tile("#")):
@@ -22,5 +30,5 @@ class Dungeon(Graph):
 
 if __name__ == "__main__":
     test_dungeon = Dungeon(80, 12)
-    test_dungeon.make_rectangle(0, 79, 0, 11, Tile("."))
+    test_dungeon.make_rectangle(0, 79, 0, 11)
     test_dungeon.print_all()
