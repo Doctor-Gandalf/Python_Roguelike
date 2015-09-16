@@ -1,8 +1,0 @@
-
-    def draw_line(self, slope, x_start, x_end, y_start, line_element=Tile("#")):
-        line = [(x, y) for x in range(x_start, x_end+1) for y in [slope*x + y_start]]
-        for x, y in line:
-            if 0 <= y < self.get_height() and 0 <= x < self.get_width():
-                self.set_elem(line_element, x, y)
-            else:
-                continue
