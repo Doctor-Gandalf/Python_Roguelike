@@ -209,6 +209,7 @@ class MainScreen:
                 self.do_command()
         elif key == 'q':
             # Quit app.
+            # USING THIS FULLY EXITS PYTHON INTERPRETER.
             exit()
         elif key == 's':
             # Save shopping list.
