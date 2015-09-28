@@ -1,7 +1,6 @@
-__author__ = 'Kellan Childers'
-
 import curses
 from math import floor
+__author__ = 'Kellan Childers'
 
 
 def center_start(console_height, console_width, window_height, window_width):

@@ -1,8 +1,7 @@
-__author__ = 'Kellan Childers'
-
 import curses
 import curses_helper.util as util
 from dungeon import Dungeon
+__author__ = 'Kellan Childers'
 
 
 class MainScreen:

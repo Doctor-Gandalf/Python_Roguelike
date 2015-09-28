@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-__author__ = 'Kellan Childers'
 
 import curses
 from curses_helper.mainscreen import MainScreen
 from curses_helper.util import center_start
+__author__ = 'Kellan Childers'
 
 
 def app(stdscr):

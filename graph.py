@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-__author__ = 'Kellan Childers'
 
 from json import dump, load
+__author__ = 'Kellan Childers'
 
 
 class Graph:

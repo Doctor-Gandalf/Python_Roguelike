@@ -1,6 +1,6 @@
-__author__ = 'Kellan Childers'
 from graph import Graph
 from dungeon.tiles import *
+__author__ = 'Kellan Childers'
 
 
 class Dungeon(Graph):

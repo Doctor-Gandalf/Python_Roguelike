@@ -1,6 +1,5 @@
-__author__ = 'Kellan Childers'
 from random import randint
-
+__author__ = 'Kellan Childers'
 
 def roll(count, dice_sides):
     return sum([randint(1, dice_sides) for _ in range(count)])
