@@ -26,21 +26,20 @@ class Dungeon(Graph):
         :type line_element: Tile
         :return: null
         """
-        self.make_line(range(x_start, x_end+1), [y_start for _ in range(x_start, x_end+1)], line_element)
-        self.make_line(range(x_start, x_end+1), [y_end for _ in range(x_start, x_end+1)], line_element)
-        self.make_line([x_start for _ in range(y_start, y_end+1)], range(y_start, y_end+1), line_element)
-        self.make_line([x_end for _ in range(y_start, y_end+1)], range(y_start, y_end+1), line_element)
+        self.make_line([(x, y_start) for x in range(x_start, x_end+1)], line_element)
+        self.make_line([(x, y_end) for x in range(x_start, x_end+1)], line_element)
+        self.make_line([(x_start, y) for y in range(y_start, y_end+1)], line_element)
+        self.make_line([(x_end, y) for y in range(y_start, y_end+1)], line_element)
 
-    def make_line(self, x_list, y_list, line_element=Wall()):
+    def make_line(self, point_list, line_element=Wall()):
         """Add a line of tiles along a set of points to the dungeon.
 
-        :param x_list: the x-element of the set of points
-        :param y_list: the y-element of the set of points
+        :param point_list: the list of points in the form (x, y)
         :param line_element: the type of tile to be added in the rectangle (default wall tile)
         :type line_element: Tile
         :return: null
         """
-        for x, y in zip(x_list, y_list):
+        for x, y in point_list:
             if 0 <= y < self.get_height() and 0 <= x < self.get_width():
                 self.set_elem(line_element, x, y)
             else:
@@ -49,4 +48,5 @@ class Dungeon(Graph):
 if __name__ == "__main__":
     test_dungeon = Dungeon(80, 12)
     test_dungeon.make_rectangle(0, 0, 79, 11)
+    test_dungeon.make_line([(x+39, y+5) for x in range(-1, 2) for y in range(-1, 2) if x**2 + y**2 == 1])
     test_dungeon.print_all()
