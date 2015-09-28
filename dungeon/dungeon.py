@@ -1,6 +1,6 @@
 __author__ = 'Kellan Childers'
 from graph import Graph
-from tiles import *
+from dungeon.tiles import *
 
 
 class Dungeon(Graph):
